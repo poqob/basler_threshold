@@ -55,7 +55,7 @@ def run():
             adapt = cv.adaptiveThreshold(
                 blurred, 255, cv.ADAPTIVE_THRESH_MEAN_C, cv.THRESH_BINARY_INV, getvar0(), getvar()
             )
-            edged = cv2.Canny(adapt, 30, 150)
+            edged = cv2.Canny(img, 30, 150)
             edges = cv2.Canny(adapt, 50, 150, apertureSize=3)
             cnts = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
             cnts = imutils.grab_contours(cnts)
